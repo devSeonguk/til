@@ -9,9 +9,13 @@
 
 ### From NomadCoders
 * [Web](#web)
+* [Tips](#tips)
 
 ### iOS
 - [Todoey-iOS13](Todoey-iOS13)
 
 ### Web
 - [javaFirst_nomad](javaFirst_nomad)
+
+### Tips
+- [Tips_From_NomadCoders](Tips_From_NomadCoders)
