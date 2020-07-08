@@ -1,6 +1,6 @@
 # Notes From Udemy
 ### To organize what I learned from Udemy such as theories and tips.
-* Computed Properties
+**Computed Properties**
 
 Getter
 
@@ -114,9 +114,9 @@ print(bucketOfPaint)
 bucketOfPaint = 2
 ```
 
-**Computed Properties is useful in cutting down on unnecessary functions and methods and it also makes your code a lot easier to maintain.**
+Computed Properties is useful in cutting down on unnecessary functions and methods and it also makes your code a lot easier to maintain.
 
-* Difference between Cocoa Touch Class and Swift File
+**Difference between Cocoa Touch Class and Swift File**
 
 Cocoa Touch Class: When you want subclass
 
