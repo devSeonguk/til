@@ -6,10 +6,11 @@
 ---
 ### From Udemy
 * [iOS](#ios)
+* [Notes_From_Udemy](#tips)
 
 ### From NomadCoders
 * [Web](#web)
-* [Tips](#tips)
+* [Tips_From_NomadCoders](#tips)
 
 ### iOS
 - [Todoey-iOS13](Todoey-iOS13)
@@ -19,3 +20,4 @@
 
 ### Tips
 - [Tips_From_NomadCoders](Tips_From_NomadCoders)
+- [Notes_From_Udemy](Notes_From_Udemy)
