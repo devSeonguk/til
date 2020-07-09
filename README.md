@@ -14,6 +14,8 @@
 
 ### iOS
 - [Todoey-iOS13](Todoey-iOS13)
+- [InspoQuotes-iOS13](InspoQuotes-iOS13)
+- [Calculator-Advanced-Swift-iOS13](Calculator-Advanced-Swift-iOS13)
 
 ### Web
 - [javaFirst_nomad](javaFirst_nomad)
