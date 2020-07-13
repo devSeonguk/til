@@ -1,5 +1,8 @@
 # Notes From Udemy
 ### To organize what I learned from Udemy such as theories and tips.
+
+---
+
 **Computed Properties**
 
 Getter
@@ -116,8 +119,92 @@ bucketOfPaint = 2
 
 Computed Properties is useful in cutting down on unnecessary functions and methods and it also makes your code a lot easier to maintain.
 
+---
+
 **Difference between Cocoa Touch Class and Swift File**
 
 Cocoa Touch Class: When you want subclass
 
 Swift File: When you create your own custom class
+
+---
+
+**How to create machine learning models.**
+
+Learned how to create own ML model for an image recognition.
+Ctrl + Click 'Xcode' -> Open Developer Tool -> Create ML
+Image Classifier -> Drag Directories of Traning Data and Testing Data
+
+e.g. Can learn from Simple Recognition App
+
+```swift
+import UIKit
+import CoreML
+import Vision
+
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera // .photoLibrary
+        imagePicker.allowsEditing = false
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = userPickedImage
+            
+            guard let ciImage = CIImage(image: userPickedImage) else {
+                fatalError("Could not conver to CIImage.")
+            }
+            
+            detect(image: ciImage)
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
+    func detect(image: CIImage) {
+        
+        guard let model = try? VNCoreMLModel(for: nameOfmlmodel().model) else {
+            fatalError("Loading CoreML Model Failed.")
+        }
+        
+        let request = VNCoreMLRequest(model: model) { (request, error) in
+            guard let results = request.results as? [VNClassificationObservation] else {
+                fatalError("Model failed to process image.")
+            }
+            
+            if let firstResult = results.first {
+                if firstResult.identifier.contains("") {
+                    self.navigationItem.title = ""
+                    self.navigationController?.navigationBar.backgroundColor = .blue
+                } else {
+                    self.navigationItem.title = ""
+                    self.navigationController?.navigationBar.backgroundColor = .red
+                }
+            }
+        }
+        
+        let handler = VNImageRequestHandler(ciImage: image)
+        
+        do {
+            try handler.perform([request])
+        } catch {
+            print(error)
+        }
+    }
+    
+    @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+}
+```
