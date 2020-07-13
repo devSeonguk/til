@@ -8,6 +8,7 @@
 Getter
 
 A getter will execute the code in order to get the value of its property.
+
 You don’t need to create an extra method.
 
 e.g. 
@@ -132,7 +133,9 @@ Swift File: When you create your own custom class
 **How to create machine learning models.**
 
 Learned how to create own ML model for an image recognition.
+
 Ctrl + Click 'Xcode' -> Open Developer Tool -> Create ML
+
 Image Classifier -> Drag Directories of Traning Data and Testing Data
 
 e.g. Can learn from Simple Recognition App
